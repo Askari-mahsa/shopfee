@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-display:"poppins"
+}
+@media (max-width: 390px) {
+  body {
+    background-color: #ffffff !important;
+  }
+}
+@font-face {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 200 700;
+  font-display: swap;
+  src: url("../../assets/Poppins-Regular.ttf") format("ttf");
+}
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Poppins', sans-serif;
+}
+/* ==================swiper-style===================== */
+.swiper-pagination {
+  display: flex;
+  justify-content: start;
+  padding-left: 28px;
+  margin-top: 50px !important;
+}
+
+.swiper-pagination-bullet {
+  background: #cacaca !important;
+  opacity: 1;
+  width: 12px !important;
+  height: 12px !important;
+}
+.swiper-pagination-bullet-active {
+  background: #5d4037 !important;
+  width: 24px !important;
+  height: 12px !important;
+  border-radius: 40% !important;
+}
+/* ==================@layer-style===================== */
+@layer base{
+  .focus\:shadow-\[\#9F4A00\] {
+    &:focus {
+      border-color: #5d4037 !important;
+      --tw-shadow-color: #5D4037;
+      @supports (color: color-mix(in lab, red, red)) {
+        --tw-shadow-color: color-mix(in oklab, #5D4037 var(--tw-shadow-alpha), transparent) !important;
+      }
+    }
+    &:active {
+      border-color: #5d4037 !important;
+      --tw-shadow-color: #5D4037;
+      @supports (color: color-mix(in lab, red, red)) {
+        --tw-shadow-color: color-mix(in oklab, #5D4037 var(--tw-shadow-alpha), transparent) !important;
+      }
+    }
+  }
+}
