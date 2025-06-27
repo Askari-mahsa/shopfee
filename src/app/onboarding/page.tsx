@@ -12,7 +12,7 @@ import { useRouter } from "next/navigation";
 
 export default function Onboarding() {
   const router = useRouter();
-  const swiperRef = useRef(null);
+  const swiperRef:any = useRef(null);
   const [isLastSlide, setIsLastSlide] = useState(false);
 
   const handleSlideChange = useCallback(
