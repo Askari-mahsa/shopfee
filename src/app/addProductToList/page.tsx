@@ -269,9 +269,9 @@ export default function addProductToList() {
         <div className="h-[400px] mx-5 mt-4 ">
           <div className=" h-[400px] overflow-y-scroll flex-nowrap">
             {data?.pages.map((page, i) => (
-              <div>
+              <div key={i}>
                 {page.products.map((product: any) => (
-                  <div className="flex py-3">
+                  <div  key={product.id} className="flex py-3">
                     <div className="block justify-items-center bg-[#56483C0D] w-[66px] h-[69px] rounded-full">
                       <Image
                         alt="ice coffee"
@@ -291,18 +291,18 @@ export default function addProductToList() {
                         </p>
                       </div>
                     </div>
-                    <div className="flex justify-around">
-                      <div className="flex-wrap pl-2 grid content-evenly">
-                        <p className=" font-display text-sm font-medium text-[#555555]">
+                    <div className="w-[340px] grid">
+                      <div className="justify-between flex-wrap flex content-evenly">
+                        <p className=" font-display pl-2 text-sm font-medium text-[#555555]">
                           {product.title}
                         </p>
-                        <p className="font-display text-xs font-normal text-[#555555]">
-                          Ice americano
-                        </p>
-                      </div>
-                      <p className=" flex left-0 pt-2 font-display text-sm font-medium text-[#3C3C3C]">
+                      <p className="left-0 font-display text-sm font-medium text-[#3C3C3C]">
                         {product.price}
                       </p>
+                      </div>
+                        <p className="pl-2 font-display text-xs font-normal text-[#555555]">
+                          Ice americano
+                        </p>
                     </div>
                   </div>
                 ))}
